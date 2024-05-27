@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  with-docker-multi-env-local:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    image: with-docker-multi-env-local
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ../../:/app
+      - /app/node_modules
