@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "title": "الجامعة السودانية الالكترونية",
+    "form": {
+      "placeholders": {
+        "name": "الرجاء قم بادخال اسمك"
+      }
+    }
+  },
+  "SignIn": {
+    "title": "تسجيل الدخول",
+    "forgot_password": "نسيت كلمة الرور؟",
+    "failed": "فشل تسجيل الدخول الرجاء المحاولة مرة اخرى"
+  },
+  "SignUp": {
+    "title": "تسجيل",
+    "failed": "فشل التسجيل"
+  },
+  "Profile": {
+    "change_password": "تغيير كلمة المرور"
+  },
+  "Auth": {
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "invalid_password": "يجب أن تكون كلمة المرور على الأقل 6 أحرف"
+  },
+  "Validation": {
+    "required": "مطلوب"
+  }
+}

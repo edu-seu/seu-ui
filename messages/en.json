@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "title": "Sudanese Electronic University",
+    "form": {
+      "placeholders": {
+        "name": "Please enter your name"
+      }
+    }
+  },
+  "SignIn": {
+    "title": "Sign In",
+    "forgot_password": "Forgot your password?",
+    "failed": "Login failed. Please try again"
+  },
+  "SignUp": {
+    "title": "Sign Up",
+    "failed": "The registration failed"
+  },
+  "Profile": {
+    "change_password": "Change Password"
+  },
+  "Auth": {
+    "invalid_email": "Invalid email",
+    "invalid_password": "Password must be at least 6 characters"
+  },
+  "Validation": {
+    "required": "required"
+  }
+}
