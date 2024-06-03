@@ -1,6 +1,7 @@
 'use client'
 import { ApolloProvider } from '@apollo/client';
 import client from '@/lib/apolloClient';
+import { AuthProvider } from '@/context/authContext';
 
 
 export default function RootProviders({
@@ -10,7 +11,9 @@ export default function RootProviders({
 }>) {
     return (
         <ApolloProvider client={client}>
-            {children}
+            <AuthProvider>
+                {children}
+            </AuthProvider>
         </ApolloProvider>
     );
 }

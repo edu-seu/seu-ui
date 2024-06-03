@@ -1,4 +1,4 @@
-import { getSession } from '@/hooks/useAuth';
+'use client'
 import { ApolloClient, InMemoryCache, from, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
@@ -9,12 +9,12 @@ const httpLink = createHttpLink({
 
 
 const authLink = setContext((_, { headers }) => {
-  const session = getSession();
-  const token = session?.token;
+  const localSession = typeof window !== 'undefined' ? localStorage.getItem('session') : null;
+  const session = localSession && localSession != 'undefined' ? JSON.parse(localSession) : null
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: session?.token ? `Bearer ${session.token}` : '',
     }
   };
 });

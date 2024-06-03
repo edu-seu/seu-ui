@@ -1,23 +1,22 @@
 'use client'
 import { useAuth } from '@/context/authContext';
 import { useRouter } from 'next/navigation';
-import { toast } from 'react-toastify';
 
-const Auth = ({ children }: any) => {
+const Authed = ({ children }: any) => {
   const router = useRouter();
 
-  const { session, loading } = useAuth();
+  const { session, didLoad } = useAuth();
 
-  if (!session && !loading) {
-    // toast.error('User is not authenticated')
-    router.replace('/signin');
+  if (session) {
+    router.replace('/');
+    return <></>
   }
 
-  if (!session) {
+  if (!didLoad) {
     return <div>loading...</div>; // أو عرض رسالة تحميل أو إعادة توجيه
   }
 
   return children; // عرض المحتوى المحمي إذا كان المستخدم مصادقًا
 };
 
-export default Auth;
+export default Authed;
