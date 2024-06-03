@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 import { useTranslations } from 'next-intl';
 import Link from "next/link"
 import { toast } from 'react-toastify';
-import useAuth from '@/hooks/useAuth';
 import { useEffect } from 'react';
+import { useAuth } from '@/context/authContext';
 
 interface FormValues {
   email: string;
@@ -22,7 +22,7 @@ const SignInForm: React.FC = () => {
   useEffect(() => {
     if (error)
       toast.error(t('SignIn.failed'));
-  }, [error])
+  }, [error, t])
 
   // تعريف مخطط التحقق باستخدام Yup
   const validationSchema = Yup.object({

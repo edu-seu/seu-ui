@@ -1,6 +1,6 @@
 'use client'
 
-import useAuth from '@/hooks/useAuth';
+import { useAuth } from '@/context/authContext';
 import { Field, Form, Formik } from 'formik';
 import { useTranslations } from 'next-intl';
 import Link from "next/link"
@@ -22,7 +22,7 @@ export default function SignUpForm() {
   useEffect(() => {
     if (error)
       toast.error(t('SignIn.failed'));
-  }, [error])
+  }, [error, t])
 
   // تعريف مخطط التحقق باستخدام Yup
   const validationSchema = Yup.object({

@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Logo from "@/public/logo.svg";
-import useAuth from '@/hooks/useAuth';
+import { useAuth } from '@/context/authContext';
 
 export function Links() {
   const pathname = usePathname()

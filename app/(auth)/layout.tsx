@@ -1,3 +1,5 @@
+import Authed from "@/components/Authed";
+
 export default function AuthLayout({
     children,
 }: Readonly<{
@@ -5,8 +7,10 @@ export default function AuthLayout({
 }>) {
 
     return (
-        <div className="bg-gray-100 w-screen h-screen flex items-center justify-center">
-            {children}
-        </div>
+        <Authed>
+            <div className="bg-gray-100 w-screen h-screen flex items-center justify-center">
+                {children}
+            </div>
+        </Authed>
     );
 }
