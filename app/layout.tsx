@@ -7,12 +7,16 @@ import RootProviders from "./root-providers";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  applicationName: "SEU",
   title: "SEU",
   description: "Sudanese Electronic University",
+  creator: "ITCASD",
+  publisher: "ITCASD",
+  authors: [{ name: 'ITCASD', url: "https://itcasd.com" }],
+  keywords: ['seu', 'sudan', 'edu', 'university', 'learn', 'traine'],
 };
 
 export async function generateStaticParams() {
@@ -32,8 +36,8 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
+    <html lang={locale} className="bg-white dark:bg-black overflow-hidden">
+      <body className={`${inter.className} h-screen overflow-y-auto bg-black/5 dark:bg-white/10 text-gray-700 dark:text-gray-100`}>
         <RootProviders>
           <NextIntlClientProvider messages={messages}>
             {children}

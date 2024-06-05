@@ -9,9 +9,9 @@ const AdminAuth = ({ children }: any) => {
     const router = useRouter();
 
     if (!isAdmin && !loading) {
-        // Check if the user has the 'admin' role
         // toast.error('Unauthorized access: User does not have admin privileges.');
         router.replace('/'); // توجيه المستخدم إلى صفحة تسجيل الدخول إذا لم يكن مصادقًا
+
     }
 
     if (!isAdmin) {

@@ -5,17 +5,17 @@ import { useRouter } from 'next/navigation';
 const Authed = ({ children }: any) => {
   const router = useRouter();
 
-  const { session, didLoad } = useAuth();
+  const { session, loading } = useAuth();
 
-  if (session) {
+  if (session && !loading) {
     router.replace('/');
     return <></>
   }
 
-  if (!didLoad) {
+
+  if (session || loading) {
     return <div>loading...</div>; // أو عرض رسالة تحميل أو إعادة توجيه
   }
-
   return children; // عرض المحتوى المحمي إذا كان المستخدم مصادقًا
 };
 
