@@ -21,7 +21,7 @@ export default function AdminPanel() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="h-full bg-white rounded-md shadow my-auto p-8">
+    <div className="h-full rounded-md shadow my-auto p-8">
       <h1>Data from GraphQL</h1>
       <ul>
         {data?.users.data.map(item => (

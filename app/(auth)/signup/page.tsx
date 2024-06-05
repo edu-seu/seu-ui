@@ -12,8 +12,8 @@ export default function SignUp({
   // params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  return (<div className="flex rounded-3xl bg-white shadow-xl w-[90%] h-[90%]">
-    <div className="rounded-s-3xl bg-gradient-to-b from-[#0CCA9A] to-[#0DCA78] w-[40%] h-full flex flex-col items-start space-y-12 p-8">
+  return (<div className="flex rounded-3xl shadow-xl">
+    <div className="rounded-s-3xl bg-gradient-to-b from-[#0CCA9A] to-[#0DCA78] w-[40%] flex flex-col items-start space-y-12 p-8">
       <Link href={`/`} className=" font-bold text-2xl space-s-1"><span className="text-white">{"SEU"}</span><span className="text-[#232323]/70">{"EDU"}</span></Link>
       <div className="grow mx-auto flex flex-col items-center justify-center space-y-12">
         <div className="flex flex-col items-center justify-center space-y-4">
@@ -24,7 +24,7 @@ export default function SignUp({
         <Link href="/signin" className="border-2 border-white rounded-full px-12 py-2 font-bold">{"Sign In"}</Link >
       </div>
     </div>
-    <div className="rounded-e-3xl w-[60%] h-full p-8 flex flex-col items-center text-[#232323]/70 border-[#232323]/50">
+    <div className="rounded-e-3xl w-[60%] p-8 flex flex-col items-center bg-white dark:bg-white/10 space-y-8">
       <div className="grow flex flex-col items-center justify-center space-y-12">
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="text-5xl font-bold text-[#0DCA78]">{"Create Account"}</div>

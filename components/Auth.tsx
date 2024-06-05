@@ -8,6 +8,8 @@ const Auth = ({ children }: any) => {
 
   const { session, loading } = useAuth();
 
+
+
   if (!session && !loading) {
     // toast.error('User is not authenticated')
     router.replace('/signin');

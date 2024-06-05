@@ -1,6 +1,6 @@
 'use client'
 import { useMutation } from '@apollo/client';
-import { useRouter } from 'next/navigation';
+import { redirect, RedirectType, useRouter } from 'next/navigation';
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import SIGN_IN_MUTATION from '@/graphql/mutations/SIGN_IN_MUTATION.gql';
 import SIGN_UP_MUTATION from '@/graphql/mutations/SIGN_UP_MUTATION.gql';
@@ -100,16 +100,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setLoading(true);
     setError(null);
     try {
-      setSession(null)
-
       if (typeof window !== 'undefined') {
-        window.location.href = '/';
-      } else {
-        router.refresh();
+        router.replace('/', { scroll: false })
+        setSession(null)
       }
     } catch (err: any) {
       console.error(err)
-      setError(err.message);
+      // setError(err.message);
     } finally {
       setLoading(false);
     }

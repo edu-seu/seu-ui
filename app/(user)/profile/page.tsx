@@ -19,7 +19,7 @@ export default function Home() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="h-full bg-white rounded-md shadow my-auto p-8">
+    <div className="h-full">
       <h1>My Profile</h1>
       <ul key={data?.me?.id}>
         <li>{data?.me?.name}</li>
